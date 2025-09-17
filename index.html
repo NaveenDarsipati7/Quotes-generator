@@ -1,53 +1,58 @@
-<html>
-    <head>
-        <title> Tables</title>
-    </head>
-    <body>
-        <h3 style="align:center">Student Details</h3>
-        <table border="3">
-            <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Addr</th>
-            </tr>
-            <tr>
-                <td>Naveen</td>
-                <td>19</td>
-                <td>Amp</td>
-            </tr>
-            <tr>
-                <td>Dewa</td>
-                <td>18</td>
-                <td>kkd</td>
-            </tr>
-            <tr>
-                <td>Pardhu</td>
-                <td>22</td>
-                <td>Rjy</td>
-            </tr>
-            <tr>
-                <td>Kiran</td>
-                <td>18</td>
-                <td>Amp</td>
-            </tr>
-            <tr>
-                <td>Praneeth</td>
-                <td>22</td>
-                <td>Kkd</td>
-            </tr>
-            <tr>
-                <td>Ramesh</td>
-                <td>19</td>
-                <td>vizag</td>
-            </tr>
-        </table>
-        <h3>If any queries:</h3>
-        <form legend>
-            <input type="textarea" rows=5 cols=7 placeholder="let us know your quires">
-        </form>
-    </body>
-</html>
+// App.jsx
+import { useState } from 'react';
+import './App.css';
 
+const moodData = {
+  Happy: {
+    quote: "Happiness is not by chance, but by choice.",
+    color: "#FFD700",
+    emoji: "😊"
+  },
+  Sad: {
+    quote: "Tears come from the heart and not the brain.",
+    color: "#87CEFA",
+    emoji: "😢"
+  },
+  Inspired: {
+    quote: "The best way to predict the future is to create it.",
+    color: "#98FB98",
+    emoji: "🚀"
+  },
+  Angry: {
+    quote: "Speak when you are angry and you will make the best speech you will ever regret.",
+    color: "#FF6347",
+    emoji: "😡"
+  },
+  Chill: {
+    quote: "Relax. Nothing is under control.",
+    color: "#AFEEEE",
+    emoji: "🧘"
+  }
+};
 
+function App() {
+  const [mood, setMood] = useState("Happy");
 
+  const handleMoodChange = (e) => {
+    setMood(e.target.value);
+  };
 
+  const { quote, color, emoji } = moodData[mood];
+
+  return (
+    <div className="App" style={{ backgroundColor: color }}>
+      <h1>Mood-Based Quote Generator</h1>
+      <select onChange={handleMoodChange} value={mood}>
+        {Object.keys(moodData).map((m) => (
+          <option key={m} value={m}>{m}</option>
+        ))}
+      </select>
+      <div className="quote-box">
+        <h2>{emoji} {mood}</h2>
+        <p>"{quote}"</p>
+      </div>
+    </div>
+  );
+}
+
+export default App;

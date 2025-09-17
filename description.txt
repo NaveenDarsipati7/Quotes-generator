@@ -1,0 +1,37 @@
+A Student Details Form is a structured document used to collect essential information about a student for administrative, academic, or record-keeping purposes. It’s commonly used in schools, colleges, training institutes, and online education platforms.
+Here’s a breakdown of what it typically includes:
+📋 Basic Sections in a Student Details Form
+🧑 Personal Information
+- Full Name
+- Date of Birth
+- Gender
+- Nationality
+- Contact Number
+- Email Address
+- Residential Address
+👨‍👩‍👧 Guardian/Parent Details
+- Parent/Guardian Name
+- Relationship to Student
+- Contact Number
+- Occupation
+- Emergency Contact Info
+🎓 Academic Information
+- Current Grade/Class
+- Previous School/College
+- Admission Number (if applicable)
+- Subjects/Courses Enrolled
+- Academic Year
+🏥 Health & Medical Info (optional)
+- Blood Group
+- Allergies or Medical Conditions
+- Doctor’s Contact (if needed)
+📎 Supporting Documents (usually attached or uploaded)
+- Passport-size Photograph
+- Birth Certificate
+- Previous Academic Records
+- ID Proof (Aadhaar, Passport, etc.)
+🛠️ Use Cases
+- School or college admissions
+- Scholarship applications
+- Hostel or transport registration
+- Online course enrollment

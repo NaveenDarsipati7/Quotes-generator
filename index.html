@@ -1,58 +1,80 @@
-// App.jsx
-import { useState } from 'react';
-import './App.css';
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood-Based Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fefefe;
+      text-align: center;
+      padding: 50px;
+    }
 
-const moodData = {
-  Happy: {
-    quote: "Happiness is not by chance, but by choice.",
-    color: "#FFD700",
-    emoji: "😊"
-  },
-  Sad: {
-    quote: "Tears come from the heart and not the brain.",
-    color: "#87CEFA",
-    emoji: "😢"
-  },
-  Inspired: {
-    quote: "The best way to predict the future is to create it.",
-    color: "#98FB98",
-    emoji: "🚀"
-  },
-  Angry: {
-    quote: "Speak when you are angry and you will make the best speech you will ever regret.",
-    color: "#FF6347",
-    emoji: "😡"
-  },
-  Chill: {
-    quote: "Relax. Nothing is under control.",
-    color: "#AFEEEE",
-    emoji: "🧘"
-  }
-};
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
 
-function App() {
-  const [mood, setMood] = useState("Happy");
+    .mood-selector {
+      margin-bottom: 20px;
+    }
 
-  const handleMoodChange = (e) => {
-    setMood(e.target.value);
-  };
+    label {
+      margin: 0 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-  const { quote, color, emoji } = moodData[mood];
+    input[type="radio"] {
+      display: none;
+    }
 
-  return (
-    <div className="App" style={{ backgroundColor: color }}>
-      <h1>Mood-Based Quote Generator</h1>
-      <select onChange={handleMoodChange} value={mood}>
-        {Object.keys(moodData).map((m) => (
-          <option key={m} value={m}>{m}</option>
-        ))}
-      </select>
-      <div className="quote-box">
-        <h2>{emoji} {mood}</h2>
-        <p>"{quote}"</p>
-      </div>
-    </div>
-  );
-}
+    .quote {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.2em;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-export default App;
+    #happy:checked ~ .happy-quote,
+    #sad:checked ~ .sad-quote,
+    #inspired:checked ~ .inspired-quote {
+      display: block;
+    }
+
+    .happy-quote {
+      background-color: #ffeb3b;
+      color: #333;
+    }
+
+    .sad-quote {
+      background-color: #90caf9;
+      color: #003366;
+    }
+
+    .inspired-quote {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌟 Mood-Based Quote Generator</h1>
+
+  <div class="mood-selector">
+    <input type="radio" id="happy" name="mood">
+    <label for="happy">Happy</label>
+
+    <input type="radio" id="sad" name="mood">
+    <label for="sad">Sad</label>
+
+    <input type="radio" id="inspired" name="mood">
+    <label for="inspired">Inspired</label>
+  </div>
+
+  <div class="quote happy-quote">"Happiness is a warm puppy." 🐶</div>
+  <div class="quote sad-quote">"Every storm runs out of rain." 🌧️</div>
+  <div class="quote inspired-quote">"Dream big. Start small. Act now." 🚀</div>
+</body>
+</html>
